@@ -1,0 +1,37 @@
+{
+    "name": "egrocery-system",
+    "version": "1.0.0",
+    "description": "E-Grocery Ordering & Inventory Management System with Payment Module",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "client": "cd frontend && npm run dev",
+        "server": "node server.js",
+        "build": "cd frontend && npm run build",
+        "start": "node server.js",
+        "install-all": "npm install && cd frontend && npm install",
+        "preview": "cd frontend && npm run preview"
+    },
+    "keywords": [
+        "grocery",
+        "ecommerce",
+        "react",
+        "nodejs",
+        "firebase",
+        "inventory",
+        "payment"
+    ],
+    "author": "MCA Final Year Project",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.6",
+        "dotenv": "^17.2.3",
+        "express": "^5.2.1",
+        "firebase-admin": "^13.6.0",
+        "helmet": "^8.1.0"
+    },
+    "devDependencies": {
+        "concurrently": "^9.0.0"
+    }
+}
