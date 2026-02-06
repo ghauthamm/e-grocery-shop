@@ -13,7 +13,7 @@ const Footer = () => {
                 <div className="footer-brand">
                     <Link to="/" className="navbar-brand">
                         <div className="navbar-logo">
-                            <FaShoppingBasket />
+                            <img src="/logo.png" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                         </div>
                         <span className="navbar-title" style={{ color: 'white' }}>SRI RANGA SUPER MARKET</span>
                     </Link>

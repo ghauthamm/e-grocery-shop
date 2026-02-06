@@ -53,7 +53,7 @@ const Navbar = () => {
                     {/* Brand */}
                     <Link to="/" className="navbar-brand">
                         <div className="navbar-logo">
-                            <FaShoppingBasket />
+                            <img src="/logo.png" alt="SRI RANGA SUPER MARKET" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                         </div>
                         <span className="navbar-title">SRI RANGA SUPER MARKET</span>
                     </Link>

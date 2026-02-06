@@ -89,17 +89,17 @@ const Invoice = () => {
                     <div className="invoice-header">
                         <div className="invoice-logo">
                             <div style={{
-                                width: '50px',
-                                height: '50px',
-                                background: 'linear-gradient(135deg, var(--primary), var(--secondary))',
+                                width: '60px',
+                                height: '60px',
+                                background: 'white',
                                 borderRadius: '10px',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                color: 'white',
-                                fontSize: '1.5rem'
+                                overflow: 'hidden',
+                                padding: '5px'
                             }}>
-                                🛒
+                                <img src="/logo.png" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                             </div>
                             <div>
                                 <h2 style={{ marginBottom: '0.25rem' }}>SRI RANGA SUPER MARKET</h2>

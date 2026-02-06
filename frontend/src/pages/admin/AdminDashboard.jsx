@@ -161,7 +161,7 @@ const AdminDashboard = () => {
                 <div className="admin-sidebar-header">
                     <Link to="/" className="navbar-brand">
                         <div className="navbar-logo" style={{ width: '40px', height: '40px' }}>
-                            <FaShoppingBasket />
+                            <img src="/logo.png" alt="Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                         </div>
                         <span style={{ color: 'white', fontSize: '1.25rem' }}>SRI RANGA SUPER MARKET</span>
                     </Link>
