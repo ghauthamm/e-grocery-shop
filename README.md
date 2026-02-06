@@ -1,8 +1,8 @@
-# E-Grocery Ordering & Inventory Management System
+# SRI RANGA SUPER MARKET
 
 ## 📋 Project Overview
 
-A complete, professional, production-ready E-Grocery Ordering and Inventory Management System with an integrated Payment Module. Built using React JS, Node.js, Express, and Firebase Firestore.
+A complete, professional, production-ready **SRI RANGA SUPER MARKET** Ordering and Inventory Management System with an integrated Payment Module. Built using React JS, Node.js, Express, and Firebase Firestore.
 
 ### Technology Stack
 
@@ -23,7 +23,7 @@ keerthana-project/
 ├── package.json                 # Unified package.json (run both from here)
 ├── server.js                    # Backend Express server
 ├── README.md                    # This documentation
-├── PAYMENT_DOCUMENTATION.md     # Payment flow documentation
+
 │
 ├── frontend/                    # React Frontend Application
 │   ├── package.json            # Frontend dependencies
