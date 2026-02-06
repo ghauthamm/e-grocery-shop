@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+  <link rel="manifest" href="/manifest.json" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO Meta Tags -->
@@ -14,10 +16,33 @@
     content="grocery, online grocery, fresh fruits, vegetables, dairy, delivery, e-commerce, Sri Ranga" />
   <meta name="author" content="SRI RANGA SUPER MARKET" />
 
-  <!-- Open Graph Tags -->
-  <meta property="og:title" content="SRI RANGA SUPER MARKET - Fresh Groceries Delivered Fast" />
+  <!-- Open Graph Tags (Social Media & WhatsApp) -->
+  <meta property="og:title" content="SRI RANGA SUPER MARKET" />
   <meta property="og:description" content="Shop fresh groceries online with fast delivery and secure payments." />
+  <meta property="og:image" content="/logo.png" />
+  <meta property="og:url" content="https://sri-ranga-e-grocery.netlify.app/" />
   <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SRI RANGA SUPER MARKET" />
+  <meta name="twitter:description" content="Fresh Groceries Delivered Fast" />
+  <meta name="twitter:image" content="/logo.png" />
+
+  <!-- Google Structure Data (Schema.org) for Logo -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SRI RANGA SUPER MARKET",
+      "url": "https://sri-ranga-e-grocery.netlify.app/",
+      "logo": "https://sri-ranga-e-grocery.netlify.app/logo.png",
+      "sameAs": [
+        "https://facebook.com/sriranga",
+        "https://instagram.com/sriranga"
+      ]
+    }
+  </script>
 
   <!-- Theme Color -->
   <meta name="theme-color" content="#10b981" />
