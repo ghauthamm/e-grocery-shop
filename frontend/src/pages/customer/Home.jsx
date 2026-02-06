@@ -24,14 +24,14 @@ const Home = () => {
 
     // Categories for the home page
     const categories = [
-        { id: 'fruits', name: 'Fruits', icon: '🍎' },
-        { id: 'vegetables', name: 'Vegetables', icon: '🥬' },
-        { id: 'dairy', name: 'Dairy', icon: '🥛' },
-        { id: 'bakery', name: 'Bakery', icon: '🍞' },
-        { id: 'beverages', name: 'Beverages', icon: '🧃' },
-        { id: 'snacks', name: 'Snacks', icon: '🍪' },
-        { id: 'grains', name: 'Grains', icon: '🌾' },
-        { id: 'household', name: 'Household', icon: '🧹' },
+        { id: 'fruits', name: 'Fruits', image: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&q=80&w=300' },
+        { id: 'vegetables', name: 'Vegetables', image: 'https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?auto=format&fit=crop&q=80&w=300' },
+        { id: 'dairy', name: 'Dairy', image: 'https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&q=80&w=300' },
+        { id: 'bakery', name: 'Bakery', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=300' },
+        { id: 'beverages', name: 'Beverages', image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&q=80&w=300' },
+        { id: 'snacks', name: 'Snacks', image: 'https://images.unsplash.com/photo-1621939514649-28b5fe2f88ae?auto=format&fit=crop&q=80&w=300' },
+        { id: 'grains', name: 'Grains', image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80&w=300' },
+        { id: 'household', name: 'Household', image: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&q=80&w=300' },
     ];
 
     // Features list
@@ -152,7 +152,9 @@ const Home = () => {
                                 className="category-card"
                                 onClick={() => navigate(`/products?category=${category.id}`)}
                             >
-                                <div className="category-icon">{category.icon}</div>
+                                <div className="category-icon" style={{ padding: 0, overflow: 'hidden' }}>
+                                    <img src={category.image} alt={category.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                </div>
                                 <h3 className="category-name">{category.name}</h3>
                             </div>
                         ))}
