@@ -4,8 +4,8 @@
 
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaShoppingBasket, FaUser, FaEnvelope, FaLock, FaPhone, FaSpinner } from 'react-icons/fa';
-import { useAuth } from '../context/AuthContext';
+import { FaShoppingBasket, FaUser, FaEnvelope, FaLock, FaPhone, FaSpinner, FaGoogle } from 'react-icons/fa';
+import { useAuth } from '../../context/AuthContext';
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -17,8 +17,9 @@ const Register = () => {
     });
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const [googleLoading, setGoogleLoading] = useState(false);
 
-    const { register } = useAuth();
+    const { register, signInWithGoogle } = useAuth();
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -65,6 +66,25 @@ const Register = () => {
         }
     };
 
+    const handleGoogleSignIn = async () => {
+        setError('');
+        setGoogleLoading(true);
+
+        try {
+            const result = await signInWithGoogle();
+
+            if (result.success) {
+                navigate('/');
+            } else {
+                setError(result.error || 'Google sign-in failed');
+            }
+        } catch (err) {
+            setError('An error occurred. Please try again.');
+        } finally {
+            setGoogleLoading(false);
+        }
+    };
+
     return (
         <div className="auth-page">
             <div className="auth-container">
@@ -74,7 +94,7 @@ const Register = () => {
                             <FaShoppingBasket style={{ color: 'white' }} />
                         </div>
                         <h1>Create Account</h1>
-                        <p>Join E-Grocery for fresh groceries</p>
+                        <p>Join SRI RANGA SUPER MARKET for fresh groceries</p>
                     </div>
 
                     {error && (
@@ -223,6 +243,27 @@ const Register = () => {
 
                     <div className="auth-divider">
                         <span>OR</span>
+                    </div>
+
+                    <button
+                        type="button"
+                        className="btn btn-outline btn-full btn-lg"
+                        onClick={handleGoogleSignIn}
+                        disabled={googleLoading || loading}
+                        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem' }}
+                    >
+                        {googleLoading ? (
+                            <>
+                                <FaSpinner className="spin" /> Signing in...
+                            </>
+                        ) : (
+                            <>
+                                <FaGoogle /> Continue with Google
+                            </>
+                        )}
+                    </button>
+
+                    <div className="auth-divider" style={{ margin: '1.5rem 0' }}>
                     </div>
 
                     <div className="auth-link">

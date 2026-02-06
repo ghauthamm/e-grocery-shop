@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * E-GROCERY ORDERING & INVENTORY MANAGEMENT SYSTEM
+ * SRI RANGA SUPER MARKET - ORDERING & INVENTORY MANAGEMENT SYSTEM
  * ============================================================================
  * 
  * Main Application Component
@@ -32,16 +32,18 @@ import Footer from './components/common/Footer';
 import PageLoader from './components/common/PageLoader';
 import { ProtectedRoute, AdminRoute, GuestRoute } from './components/common/ProtectedRoute';
 
-// Pages
-import Home from './pages/Home';
-import Products from './pages/Products';
-import Cart from './pages/Cart';
-import Checkout from './pages/Checkout';
-import OrderConfirmation from './pages/OrderConfirmation';
-import Orders from './pages/Orders';
-import Invoice from './pages/Invoice';
-import Login from './pages/Login';
-import Register from './pages/Register';
+// Auth Pages
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
+
+// Customer Pages
+import Home from './pages/customer/Home';
+import Products from './pages/customer/Products';
+import Cart from './pages/customer/Cart';
+import Checkout from './pages/customer/Checkout';
+import OrderConfirmation from './pages/customer/OrderConfirmation';
+import Orders from './pages/customer/Orders';
+import Invoice from './pages/customer/Invoice';
 
 // Admin Pages
 import AdminDashboard from './pages/admin/AdminDashboard';

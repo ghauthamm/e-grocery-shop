@@ -1,5 +1,5 @@
 /**
- * E-GROCERY STORE - MAIN STYLES
+ * SRI RANGA SUPER MARKET - MAIN STYLES
  * Professional CSS with modern design system
  */
 
@@ -11,15 +11,15 @@
   --primary: #10b981;
   --primary-dark: #059669;
   --primary-light: #34d399;
-  
+
   /* Secondary Colors */
   --secondary: #6366f1;
   --secondary-dark: #4f46e5;
-  
+
   /* Accent Colors */
   --accent: #f59e0b;
   --accent-dark: #d97706;
-  
+
   /* Neutral Colors */
   --gray-50: #f9fafb;
   --gray-100: #f3f4f6;
@@ -31,41 +31,41 @@
   --gray-700: #374151;
   --gray-800: #1f2937;
   --gray-900: #111827;
-  
+
   /* Status Colors */
   --success: #22c55e;
   --warning: #eab308;
   --error: #ef4444;
   --info: #3b82f6;
-  
+
   /* Background */
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
   --bg-dark: #0f172a;
-  
+
   /* Text */
   --text-primary: #1e293b;
   --text-secondary: #64748b;
   --text-light: #94a3b8;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  
+
   /* Border Radius */
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
   --radius-full: 9999px;
-  
+
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-normal: 300ms ease;
   --transition-slow: 500ms ease;
-  
+
   /* Font */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -103,7 +103,9 @@ button {
   outline: none;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   font-family: inherit;
   outline: none;
 }
@@ -113,7 +115,8 @@ img {
   height: auto;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -171,22 +174,46 @@ ul, ol {
   animation: dots 1.5s infinite;
 }
 
-.loader-dots span:nth-child(2) { animation-delay: 0.2s; }
-.loader-dots span:nth-child(3) { animation-delay: 0.4s; }
+.loader-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loader-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes dots {
-  0%, 20% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
+
+  0%,
+  20% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 /* ============================================================================
@@ -744,8 +771,15 @@ ul, ol {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 /* ============================================================================
@@ -867,51 +901,162 @@ ul, ol {
 /* ============================================================================
    UTILITY CLASSES
    ============================================================================ */
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-.text-primary { color: var(--primary); }
-.text-secondary { color: var(--text-secondary); }
-.text-success { color: var(--success); }
-.text-error { color: var(--error); }
-.text-warning { color: var(--warning); }
+.text-center {
+  text-align: center;
+}
 
-.bg-primary { background-color: var(--primary); }
-.bg-secondary { background-color: var(--bg-secondary); }
-.bg-white { background-color: white; }
+.text-right {
+  text-align: right;
+}
 
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-.mt-4 { margin-top: 2rem; }
-.mb-1 { margin-bottom: 0.5rem; }
-.mb-2 { margin-bottom: 1rem; }
-.mb-3 { margin-bottom: 1.5rem; }
-.mb-4 { margin-bottom: 2rem; }
+.text-primary {
+  color: var(--primary);
+}
 
-.flex { display: flex; }
-.flex-col { flex-direction: column; }
-.items-center { align-items: center; }
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
-.gap-1 { gap: 0.5rem; }
-.gap-2 { gap: 1rem; }
-.gap-3 { gap: 1.5rem; }
+.text-secondary {
+  color: var(--text-secondary);
+}
 
-.grid { display: grid; }
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.text-success {
+  color: var(--success);
+}
 
-.hidden { display: none; }
-.block { display: block; }
+.text-error {
+  color: var(--error);
+}
 
-.w-full { width: 100%; }
-.h-full { height: 100%; }
+.text-warning {
+  color: var(--warning);
+}
 
-.rounded { border-radius: var(--radius-md); }
-.rounded-lg { border-radius: var(--radius-lg); }
-.rounded-xl { border-radius: var(--radius-xl); }
-.rounded-full { border-radius: var(--radius-full); }
+.bg-primary {
+  background-color: var(--primary);
+}
 
-.shadow { box-shadow: var(--shadow-md); }
-.shadow-lg { box-shadow: var(--shadow-lg); }
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-3 {
+  margin-top: 1.5rem;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-1 {
+  gap: 0.5rem;
+}
+
+.gap-2 {
+  gap: 1rem;
+}
+
+.gap-3 {
+  gap: 1.5rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.rounded {
+  border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+.rounded-xl {
+  border-radius: var(--radius-xl);
+}
+
+.rounded-full {
+  border-radius: var(--radius-full);
+}
+
+.shadow {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}

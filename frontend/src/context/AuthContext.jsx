@@ -17,7 +17,9 @@ import {
     signInWithEmailAndPassword,
     signOut,
     onAuthStateChanged,
-    updateProfile
+    updateProfile,
+    GoogleAuthProvider,
+    signInWithPopup
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { auth, db } from '../config/firebase';
@@ -109,6 +111,43 @@ export const AuthProvider = ({ children }) => {
     };
 
     /**
+     * Sign in with Google
+     */
+    const signInWithGoogle = async () => {
+        try {
+            const provider = new GoogleAuthProvider();
+            const userCredential = await signInWithPopup(auth, provider);
+            const newUser = userCredential.user;
+
+            // Check if user profile exists in Firestore
+            const userDoc = await getDoc(doc(db, 'users', newUser.uid));
+
+            if (!userDoc.exists()) {
+                // Create user profile if it doesn't exist
+                const userData = {
+                    uid: newUser.uid,
+                    email: newUser.email,
+                    name: newUser.displayName || 'User',
+                    phone: newUser.phoneNumber || '',
+                    role: 'customer',
+                    createdAt: new Date().toISOString(),
+                    updatedAt: new Date().toISOString()
+                };
+
+                await setDoc(doc(db, 'users', newUser.uid), userData);
+                setUserProfile(userData);
+            } else {
+                setUserProfile(userDoc.data());
+            }
+
+            return { success: true, user: newUser };
+        } catch (error) {
+            console.error('Google sign-in error:', error);
+            return { success: false, error: error.message };
+        }
+    };
+
+    /**
      * Logout current user
      */
     const logout = async () => {
@@ -187,6 +226,7 @@ export const AuthProvider = ({ children }) => {
         loading,
         register,
         login,
+        signInWithGoogle,
         logout,
         updateUserProfile,
         getToken,

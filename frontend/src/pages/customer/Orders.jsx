@@ -7,8 +7,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBox, FaFileInvoice, FaSpinner } from 'react-icons/fa';
 import { collection, query, where, orderBy, getDocs } from 'firebase/firestore';
-import { db } from '../config/firebase';
-import { useAuth } from '../context/AuthContext';
+import { db } from '../../config/firebase';
+import { useAuth } from '../../context/AuthContext';
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);

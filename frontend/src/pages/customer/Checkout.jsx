@@ -7,9 +7,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaMapMarkerAlt, FaCreditCard, FaQrcode, FaMoneyBillWave, FaCheck } from 'react-icons/fa';
 import { collection, addDoc, doc, updateDoc, increment } from 'firebase/firestore';
-import { db } from '../config/firebase';
-import { useCart } from '../context/CartContext';
-import { useAuth } from '../context/AuthContext';
+import { db } from '../../config/firebase';
+import { useCart } from '../../context/CartContext';
+import { useAuth } from '../../context/AuthContext';
 
 const Checkout = () => {
     const navigate = useNavigate();

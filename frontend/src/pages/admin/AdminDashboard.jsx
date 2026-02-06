@@ -163,7 +163,7 @@ const AdminDashboard = () => {
                         <div className="navbar-logo" style={{ width: '40px', height: '40px' }}>
                             <FaShoppingBasket />
                         </div>
-                        <span style={{ color: 'white', fontSize: '1.25rem' }}>E-Grocery</span>
+                        <span style={{ color: 'white', fontSize: '1.25rem' }}>SRI RANGA SUPER MARKET</span>
                     </Link>
                 </div>
 

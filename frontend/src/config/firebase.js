@@ -7,7 +7,7 @@
  * - Authentication (Firebase Auth)
  * - Database (Firestore)
  * 
- * Configuration is set up for the E-Grocery application.
+ * Configuration is set up for the SRI RANGA SUPER MARKET application.
  * ============================================================================
  */
 

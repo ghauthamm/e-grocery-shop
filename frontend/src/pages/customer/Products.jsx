@@ -7,8 +7,8 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { FaSearch, FaBoxOpen } from 'react-icons/fa';
 import { collection, getDocs, query, where } from 'firebase/firestore';
-import { db } from '../config/firebase';
-import ProductCard from '../components/products/ProductCard';
+import { db } from '../../config/firebase';
+import ProductCard from '../../components/products/ProductCard';
 
 const Products = () => {
     const [searchParams, setSearchParams] = useSearchParams();

@@ -7,8 +7,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FaPrint, FaDownload, FaArrowLeft } from 'react-icons/fa';
 import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../config/firebase';
-import { useAuth } from '../context/AuthContext';
+import { db } from '../../config/firebase';
+import { useAuth } from '../../context/AuthContext';
 
 const Invoice = () => {
     const { orderId } = useParams();
@@ -102,7 +102,7 @@ const Invoice = () => {
                                 🛒
                             </div>
                             <div>
-                                <h2 style={{ marginBottom: '0.25rem' }}>E-Grocery Store</h2>
+                                <h2 style={{ marginBottom: '0.25rem' }}>SRI RANGA SUPER MARKET</h2>
                                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                                     Fresh Groceries, Delivered Fast
                                 </p>
@@ -120,7 +120,7 @@ const Invoice = () => {
                     <div className="invoice-parties">
                         <div className="invoice-from">
                             <h3>From</h3>
-                            <p style={{ fontWeight: '600' }}>E-Grocery Store</p>
+                            <p style={{ fontWeight: '600' }}>SRI RANGA SUPER MARKET</p>
                             <p>123 Market Street</p>
                             <p>City - 600001</p>
                             <p>Phone: +91 9876543210</p>
@@ -243,7 +243,7 @@ const Invoice = () => {
 
                     {/* Footer */}
                     <div className="invoice-footer">
-                        <p style={{ marginBottom: '0.5rem' }}>Thank you for shopping with E-Grocery!</p>
+                        <p style={{ marginBottom: '0.5rem' }}>Thank you for shopping with SRI RANGA SUPER MARKET!</p>
                         <p style={{ fontSize: '0.85rem' }}>
                             This is a computer-generated invoice and does not require a signature.
                         </p>

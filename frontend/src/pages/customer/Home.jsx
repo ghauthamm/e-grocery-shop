@@ -14,8 +14,8 @@ import {
     FaArrowRight
 } from 'react-icons/fa';
 import { collection, getDocs, query, where, limit } from 'firebase/firestore';
-import { db } from '../config/firebase';
-import ProductCard from '../components/products/ProductCard';
+import { db } from '../../config/firebase';
+import ProductCard from '../../components/products/ProductCard';
 
 const Home = () => {
     const [featuredProducts, setFeaturedProducts] = useState([]);

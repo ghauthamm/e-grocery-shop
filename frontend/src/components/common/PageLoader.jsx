@@ -15,7 +15,7 @@ const PageLoader = ({ loading }) => {
                 </div>
                 <div className="loader-spinner"></div>
                 <p className="loader-text">
-                    Loading E-Grocery
+                    Loading SRI RANGA SUPER MARKET
                     <span className="loader-dots">
                         <span>.</span>
                         <span>.</span>

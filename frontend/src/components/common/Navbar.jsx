@@ -55,7 +55,7 @@ const Navbar = () => {
                         <div className="navbar-logo">
                             <FaShoppingBasket />
                         </div>
-                        <span className="navbar-title">E-Grocery</span>
+                        <span className="navbar-title">SRI RANGA SUPER MARKET</span>
                     </Link>
 
                     {/* Desktop Navigation */}

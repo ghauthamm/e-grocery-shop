@@ -15,7 +15,7 @@ const Footer = () => {
                         <div className="navbar-logo">
                             <FaShoppingBasket />
                         </div>
-                        <span className="navbar-title" style={{ color: 'white' }}>E-Grocery</span>
+                        <span className="navbar-title" style={{ color: 'white' }}>SRI RANGA SUPER MARKET</span>
                     </Link>
                     <p>
                         Your one-stop shop for fresh groceries delivered to your doorstep.
@@ -63,7 +63,7 @@ const Footer = () => {
             </div>
 
             <div className="footer-bottom">
-                <p>© 2024 E-Grocery. All rights reserved. | MCA Final Year Project</p>
+                <p>© 2024 SRI RANGA SUPER MARKET. All rights reserved. | MCA Final Year Project</p>
             </div>
         </footer>
     );
