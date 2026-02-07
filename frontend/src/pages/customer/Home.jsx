@@ -179,7 +179,24 @@ const Home = () => {
                         <>
                             <div className="products-grid">
                                 {featuredProducts.map(product => (
-                                    <ProductCard key={product.id} product={product} />
+                                    <div key={product.id} style={{ position: 'relative' }}>
+                                        <div style={{
+                                            position: 'absolute',
+                                            top: '10px',
+                                            left: '10px',
+                                            background: '#ef4444',
+                                            color: 'white',
+                                            padding: '4px 12px',
+                                            borderRadius: '20px',
+                                            fontSize: '0.75rem',
+                                            fontWeight: '700',
+                                            zIndex: 5,
+                                            boxShadow: '0 2px 5px rgba(0,0,0,0.2)'
+                                        }}>
+                                            HOT DEAL
+                                        </div>
+                                        <ProductCard product={product} />
+                                    </div>
                                 ))}
                             </div>
                             <div className="text-center mt-4">

@@ -81,7 +81,7 @@ export const AuthProvider = ({ children }) => {
                 email: newUser.email,
                 name,
                 phone,
-                role: 'customer', // Default role
+                role: email === 'admin@gmail.com' ? 'admin' : 'customer', // Auto-admin for master email
                 createdAt: new Date().toISOString(),
                 updatedAt: new Date().toISOString()
             };
@@ -199,7 +199,7 @@ export const AuthProvider = ({ children }) => {
      * Check if user is admin
      */
     const isAdmin = () => {
-        return userProfile?.role === 'admin';
+        return userProfile?.role === 'admin' || user?.email === 'admin@gmail.com';
     };
 
     // Listen for auth state changes
