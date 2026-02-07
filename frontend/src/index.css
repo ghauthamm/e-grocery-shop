@@ -260,13 +260,13 @@ ol {
 }
 
 .search-form:focus-within {
-  box-shadow: 0 0 0 2px #f3a847, 0 0 0 3px rgba(243, 168, 71, 0.5);
-  border-color: #f3a847;
+  box-shadow: 0 0 0 2px #059669, 0 0 0 3px rgba(5, 150, 105, 0.3);
+  border-color: #059669;
 }
 
 .search-category {
-  background: #f3f3f3;
-  border-right: 1px solid #ccc;
+  background: #f8fafc;
+  border-right: 1px solid #e2e8f0;
   display: flex;
   align-items: center;
 }
@@ -276,15 +276,15 @@ ol {
   border: none;
   padding: 0 0.75rem;
   font-size: 0.8rem;
-  color: #555;
+  color: #64748b;
   cursor: pointer;
   height: 100%;
   outline: none;
 }
 
 .category-select:hover {
-  background: #e3e3e3;
-  color: #111;
+  background: #f1f5f9;
+  color: #059669;
 }
 
 .search-input {
@@ -293,11 +293,11 @@ ol {
   padding: 0 1rem;
   font-size: 0.95rem;
   outline: none;
-  color: #111;
+  color: #1a202c;
 }
 
 .search-submit-btn {
-  background: #febd69;
+  background: #059669;
   border: none;
   padding: 0 1rem;
   cursor: pointer;
@@ -305,12 +305,12 @@ ol {
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  color: #333;
+  color: #ffffff;
   transition: background 0.2s;
 }
 
 .search-submit-btn:hover {
-  background: #f3a847;
+  background: #047857;
 }
 
 /* Search Suggestions Dropdown */
@@ -384,19 +384,19 @@ ol {
 }
 
 .navbar {
-  background: #131921;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
-  color: white;
+  color: #1a202c;
 }
 
 .navbar-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   max-width: 1500px;
   margin: 0 auto;
 }
@@ -417,9 +417,10 @@ ol {
 }
 
 .navbar-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #059669;
+  /* Branding Green */
 }
 
 .navbar-nav {
@@ -429,22 +430,23 @@ ol {
 }
 
 .nav-link {
-  color: #ccc;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: all 0.2s;
-  padding: 0.5rem 0.75rem;
-  border-radius: 2px;
-  border: 1px solid transparent;
+  color: #4a5568;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
 }
 
 .nav-link:hover {
-  color: white;
-  border-color: white;
+  color: #059669;
+  background: #ecfdf5;
+  /* Very light green background on hover */
 }
 
 .nav-link.active {
-  color: #febd69;
+  color: white;
+  background: #059669;
 }
 
 .navbar-actions {
