@@ -1290,6 +1290,36 @@ ol {
 }
 
 .shadow {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ============================================================================
+   AUTH PAGES UPDATES
+   ============================================================================ */
+.auth-card-top-actions {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 10;
+}
+
+.auth-action-btn {
+  background: white;
+  border: 1px solid #eee;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #64748b;
   cursor: pointer;
   transition: all 0.2s;
@@ -1310,8 +1340,14 @@ ol {
 
 .auth-page {
   background: #f8fafc;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .auth-card {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background: white;
+  border-radius: 1rem;
 }
