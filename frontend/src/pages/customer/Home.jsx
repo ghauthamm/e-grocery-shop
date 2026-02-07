@@ -162,6 +162,40 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Featured Products Section - Now Shop Offered Products */}
+            <section className="products-section" style={{ padding: '4rem 0', background: '#f8fafc' }}>
+                <div className="container">
+                    <div className="section-header" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                        <h2 style={{ fontSize: '2.5rem', color: '#1a202c', fontWeight: '800' }}>Shop Offered Products</h2>
+                        <p style={{ color: '#64748b', fontSize: '1.1rem' }}>Handpicked fresh products at the best prices</p>
+                    </div>
+
+                    {loading ? (
+                        <div className="text-center" style={{ padding: '3rem' }}>
+                            <div className="loader-spinner" style={{ margin: '0 auto' }}></div>
+                            <p>Loading fresh products...</p>
+                        </div>
+                    ) : featuredProducts.length > 0 ? (
+                        <>
+                            <div className="products-grid">
+                                {featuredProducts.map(product => (
+                                    <ProductCard key={product.id} product={product} />
+                                ))}
+                            </div>
+                            <div className="text-center mt-4">
+                                <Link to="/products" className="btn btn-primary" style={{ padding: '1rem 2rem', borderRadius: '50px' }}>
+                                    View All Products <FaArrowRight />
+                                </Link>
+                            </div>
+                        </>
+                    ) : (
+                        <div className="text-center" style={{ padding: '3rem' }}>
+                            <p>No products available. Please seed the database first.</p>
+                        </div>
+                    )}
+                </div>
+            </section>
+
             {/* CTA Section */}
             <section style={{
                 background: 'linear-gradient(135deg, var(--primary), var(--secondary))',
