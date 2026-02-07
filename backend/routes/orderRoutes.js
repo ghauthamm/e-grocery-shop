@@ -226,11 +226,11 @@ router.get('/:id/invoice', verifyToken, async (req, res) => {
             paymentMethod: orderData.paymentMethod,
             paymentStatus: orderData.paymentStatus,
             company: {
-                name: 'E-Grocery Store',
-                address: '123 Market Street, City - 600001',
-                phone: '+91 9876543210',
-                email: 'support@egrocery.com',
-                gstin: 'GSTIN1234567890'
+                name: 'SRI RANGA SUPER MARKET',
+                address: 'C57, 4th Cross Street, Thillai Nagar, Trichy',
+                phone: '8056644344',
+                email: 'rengafoods19@gmail.com',
+                gstin: '33BCZPH4823G1ZE'
             }
         };
 

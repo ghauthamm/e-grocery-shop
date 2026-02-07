@@ -10,8 +10,8 @@ router.post('/initiate', verifyToken, async (req, res) => {
     try {
         const { amount, orderId } = req.body;
         const transactionId = `TXN${Date.now()}${Math.floor(Math.random() * 10000)}`;
-        const upiId = 'egrocery@upi';
-        const merchantName = 'E-Grocery Store';
+        const upiId = '8056644344@upi';
+        const merchantName = 'SRI RANGA SUPER MARKET';
         const upiLink = `upi://pay?pa=${upiId}&pn=${merchantName}&am=${amount}&tr=${transactionId}&tn=Order%20Payment`;
 
         res.json({

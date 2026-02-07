@@ -12,17 +12,20 @@ import {
     FaBars,
     FaTimes,
     FaSignOutAlt,
-    FaSearch
+    FaSearch,
+    FaHeart
 } from 'react-icons/fa';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
+import { useWishlist } from '../../context/WishlistContext';
 
 const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { user, userProfile, logout, isAdmin } = useAuth();
     const { getCartCount } = useCart();
+    const { wishlistCount } = useWishlist();
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -33,6 +36,7 @@ const Navbar = () => {
     const [showDropdown, setShowDropdown] = useState(false);
     const searchRef = useRef(null);
 
+    const [selectedCategory, setSelectedCategory] = useState('All');
     const cartCount = getCartCount();
 
     // Fetch products for search on mount
@@ -98,16 +102,17 @@ const Navbar = () => {
     const isActive = (path) => location.pathname === path;
 
     const navLinks = [
-        { path: '/', label: 'Home' },
-        { path: '/products', label: 'Products' },
+        { path: '/', label: 'Home', icon: <FaShoppingBasket /> },
+        { path: '/products', label: 'Products', icon: <FaSearch /> },
     ];
 
     if (user) {
-        navLinks.push({ path: '/orders', label: 'My Orders' });
+        navLinks.push({ path: '/orders', label: 'My Orders', icon: <FaShoppingCart /> });
+        navLinks.push({ path: '/wishlist', label: 'Favorites', icon: <FaHeart /> });
     }
 
     if (isAdmin()) {
-        navLinks.push({ path: '/admin', label: 'Dashboard' });
+        navLinks.push({ path: '/admin', label: 'Dashboard', icon: <FaUser /> });
     }
 
     return (
@@ -122,91 +127,62 @@ const Navbar = () => {
                         <span className="navbar-title">SRI RANGA SUPER MARKET</span>
                     </Link>
 
-                    {/* Search Bar - Desktop */}
-                    <div className="navbar-search" ref={searchRef} style={{ flex: 1, margin: '0 2rem', maxWidth: '500px', display: 'none', position: 'relative' }}>
-                        <form onSubmit={handleSearchSubmit} style={{ position: 'relative', display: 'flex' }}>
+                    {/* Amazon-style Search Bar - Desktop */}
+                    <div className="navbar-search desktop-only" ref={searchRef}>
+                        <form onSubmit={handleSearchSubmit} className="search-form">
+                            <div className="search-category">
+                                <select
+                                    value={selectedCategory}
+                                    onChange={(e) => setSelectedCategory(e.target.value)}
+                                    className="category-select"
+                                >
+                                    <option>All</option>
+                                    <option>Fruits</option>
+                                    <option>Vegetables</option>
+                                    <option>Dairy</option>
+                                    <option>Bakery</option>
+                                    <option>Beverages</option>
+                                    <option>Snacks</option>
+                                </select>
+                            </div>
                             <input
                                 type="text"
                                 name="search"
-                                placeholder="Search for products..."
+                                className="search-input"
+                                placeholder="Search Sri Ranga Super Market"
                                 value={searchQuery}
                                 onChange={handleSearchInput}
                                 onFocus={() => searchQuery.length > 0 && setShowDropdown(true)}
-                                style={{
-                                    width: '100%',
-                                    padding: '0.75rem 1rem 0.75rem 2.5rem',
-                                    borderRadius: '50px',
-                                    border: '1px solid #e2e8f0',
-                                    outline: 'none',
-                                    fontSize: '0.9rem'
-                                }}
                             />
-                            <FaSearch style={{
-                                position: 'absolute',
-                                left: '1rem',
-                                top: '50%',
-                                transform: 'translateY(-50%)',
-                                color: '#94a3b8'
-                            }} />
+                            <button type="submit" className="search-submit-btn">
+                                <FaSearch />
+                            </button>
                         </form>
 
                         {/* Live Search Results Dropdown */}
                         {showDropdown && searchResults.length > 0 && (
-                            <div style={{
-                                position: 'absolute',
-                                top: '120%',
-                                left: 0,
-                                right: 0,
-                                background: 'white',
-                                borderRadius: '1rem',
-                                boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
-                                overflow: 'hidden',
-                                zIndex: 1000,
-                                border: '1px solid #f1f5f9'
-                            }}>
+                            <div className="search-dropdown">
                                 {searchResults.map(product => (
                                     <div
                                         key={product.id}
+                                        className="search-result-item"
                                         onClick={() => {
                                             navigate(`/products?search=${encodeURIComponent(product.name)}`);
                                             setSearchQuery(product.name);
                                             setShowDropdown(false);
                                         }}
-                                        style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            gap: '1rem',
-                                            padding: '0.75rem 1rem',
-                                            cursor: 'pointer',
-                                            borderBottom: '1px solid #f8fafc',
-                                            transition: 'background 0.2s'
-                                        }}
-                                        onMouseEnter={(e) => e.currentTarget.style.background = '#f8fafc'}
-                                        onMouseLeave={(e) => e.currentTarget.style.background = 'white'}
                                     >
-                                        <div style={{ width: '40px', height: '40px', borderRadius: '8px', overflow: 'hidden', background: '#f1f5f9' }}>
-                                            <img src={product.image} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <FaSearch className="suggestion-icon" />
+                                        <div className="suggestion-text">
+                                            <span className="match">{searchQuery}</span>
+                                            <span>{product.name.toLowerCase().replace(searchQuery.toLowerCase(), '')}</span>
                                         </div>
-                                        <div style={{ flex: 1 }}>
-                                            <div style={{ fontWeight: '600', color: '#1e293b', fontSize: '0.9rem' }}>{product.name}</div>
-                                            <div style={{ fontSize: '0.75rem', color: '#64748b' }}>{product.category}</div>
-                                        </div>
-                                        <div style={{ fontWeight: '700', color: '#10b981', fontSize: '0.9rem' }}>
-                                            ₹{product.price}
-                                        </div>
+                                        <div className="suggestion-category">in {product.category}</div>
                                     </div>
                                 ))}
                                 <div
                                     onClick={handleSearchSubmit}
-                                    style={{
-                                        padding: '0.75rem',
-                                        textAlign: 'center',
-                                        color: '#6366f1',
-                                        fontSize: '0.875rem',
-                                        fontWeight: '600',
-                                        cursor: 'pointer',
-                                        background: '#f8fafc'
-                                    }}
+                                    className="search-view-all"
                                 >
                                     View all results for "{searchQuery}"
                                 </div>
@@ -227,7 +203,9 @@ const Navbar = () => {
                                 key={link.path}
                                 to={link.path}
                                 className={`nav-link ${isActive(link.path) ? 'active' : ''}`}
+                                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
                             >
+                                {link.icon}
                                 {link.label}
                             </Link>
                         ))}
@@ -241,6 +219,17 @@ const Navbar = () => {
                                 <span className="cart-badge">{cartCount > 99 ? '99+' : cartCount}</span>
                             )}
                         </Link>
+
+                        {user && (
+                            <Link to="/wishlist" className="cart-btn" title="Favorites">
+                                <FaHeart />
+                                {wishlistCount > 0 && (
+                                    <span className="cart-badge" style={{ background: '#ef4444' }}>
+                                        {wishlistCount > 99 ? '99+' : wishlistCount}
+                                    </span>
+                                )}
+                            </Link>
+                        )}
 
                         {user ? (
                             <div className="user-menu">
@@ -282,8 +271,9 @@ const Navbar = () => {
                             to={link.path}
                             className="mobile-nav-link"
                             onClick={() => setMobileMenuOpen(false)}
+                            style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}
                         >
-                            {link.label}
+                            {link.icon} {link.label}
                         </Link>
                     ))}
 

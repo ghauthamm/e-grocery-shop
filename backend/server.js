@@ -60,7 +60,7 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
     console.log(`
   ╔══════════════════════════════════════════════════════════╗
-  ║         E-GROCERY API SERVER STARTED                     ║
+  ║         SRI RANGA SUPER MARKET API STARTED         ║
   ║         Port: ${PORT}                                         ║
   ║         Environment: ${process.env.NODE_ENV || 'development'}                       ║
   ║         API Docs: http://localhost:${PORT}/api/health          ║

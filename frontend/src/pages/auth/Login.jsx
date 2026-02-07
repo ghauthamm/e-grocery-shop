@@ -4,7 +4,7 @@
 
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { FaShoppingBasket, FaEnvelope, FaLock, FaSpinner, FaGoogle } from 'react-icons/fa';
+import { FaShoppingBasket, FaEnvelope, FaLock, FaSpinner, FaGoogle, FaArrowLeft, FaTimes } from 'react-icons/fa';
 import { useAuth } from '../../context/AuthContext';
 
 const Login = () => {
@@ -62,10 +62,30 @@ const Login = () => {
     return (
         <div className="auth-page">
             <div className="auth-container">
-                <div className="auth-card">
-                    <div className="auth-header">
+                <div className="auth-card" style={{ position: 'relative' }}>
+                    {/* Back and Close Buttons */}
+                    <div className="auth-card-top-actions">
+                        <button
+                            type="button"
+                            className="auth-action-btn back-btn"
+                            onClick={() => navigate(-1)}
+                            title="Go Back"
+                        >
+                            <FaArrowLeft />
+                        </button>
+                        <button
+                            type="button"
+                            className="auth-action-btn close-btn"
+                            onClick={() => navigate('/')}
+                            title="Close"
+                        >
+                            <FaTimes />
+                        </button>
+                    </div>
+
+                    <div className="auth-header" style={{ marginTop: '1.5rem' }}>
                         <div className="auth-logo">
-                            <img src="/logo.png" alt="Logo" style={{ width: '60px', height: '60px', objectFit: 'contain' }} />
+                            <img src="/logo.png" alt="Logo" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />
                         </div>
                         <h1>Welcome Back</h1>
                         <p>Sign in to continue to SRI RANGA SUPER MARKET</p>
@@ -173,6 +193,10 @@ const Login = () => {
                     <div className="auth-link">
                         Don't have an account?{' '}
                         <Link to="/register">Create Account</Link>
+                    </div>
+
+                    <div className="auth-link" style={{ marginTop: '1rem', borderTop: '1px solid #f1f5f9', paddingTop: '1rem' }}>
+                        <Link to="/admin/login" style={{ color: '#64748b', fontSize: '0.85rem' }}>Admin Portal Access</Link>
                     </div>
                 </div>
             </div>

@@ -323,7 +323,7 @@ const Checkout = () => {
                                         </div>
                                         <p style={{ marginBottom: '1rem' }}>Scan QR code to pay</p>
                                         <div className="upi-id-display">
-                                            <span>UPI ID: egrocery@upi</span>
+                                            <span>UPI ID: 8056644344@upi</span>
                                         </div>
                                     </div>
                                     <p style={{ textAlign: 'center', marginBottom: '1rem', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>

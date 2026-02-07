@@ -1,7 +1,7 @@
 {
     "name": "egrocery-system",
     "version": "1.0.0",
-    "description": "E-Grocery Ordering & Inventory Management System with Payment Module",
+    "description": "SRI RANGA SUPER MARKET - E-Grocery Ordering & Inventory Management System",
     "private": true,
     "type": "module",
     "scripts": {

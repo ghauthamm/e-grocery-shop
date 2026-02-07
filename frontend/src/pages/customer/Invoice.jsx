@@ -121,11 +121,11 @@ const Invoice = () => {
                         <div className="invoice-from">
                             <h3>From</h3>
                             <p style={{ fontWeight: '600' }}>SRI RANGA SUPER MARKET</p>
-                            <p>123 Market Street</p>
-                            <p>City - 600001</p>
-                            <p>Phone: +91 9876543210</p>
-                            <p>Email: support@egrocery.com</p>
-                            <p style={{ marginTop: '0.5rem' }}>GSTIN: 33XXXXX1234X1ZX</p>
+                            <p>C57, 4th Cross Street</p>
+                            <p>Thillai Nagar, Trichy</p>
+                            <p>Phone: 8056644344</p>
+                            <p>Email: rengafoods19@gmail.com</p>
+                            <p style={{ marginTop: '0.5rem' }}>GSTIN: 33BCZPH4823G1ZE</p>
                         </div>
                         <div className="invoice-to">
                             <h3>Bill To</h3>
@@ -248,7 +248,7 @@ const Invoice = () => {
                             This is a computer-generated invoice and does not require a signature.
                         </p>
                         <p style={{ fontSize: '0.85rem', marginTop: '0.5rem' }}>
-                            For any queries, contact us at support@egrocery.com or +91 9876543210
+                            For any queries, contact us at rengafoods19@gmail.com or 8056644344
                         </p>
                     </div>
                 </div>

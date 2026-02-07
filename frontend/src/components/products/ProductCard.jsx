@@ -4,11 +4,15 @@
  */
 
 import React from 'react';
-import { FaPlus, FaMinus, FaShoppingCart } from 'react-icons/fa';
+import { FaPlus, FaMinus, FaShoppingCart, FaHeart, FaRegHeart } from 'react-icons/fa';
 import { useCart } from '../../context/CartContext';
+import { useWishlist } from '../../context/WishlistContext';
 
 const ProductCard = ({ product }) => {
     const { addToCart, isInCart, getItemQuantity, incrementQuantity, decrementQuantity } = useCart();
+    const { isInWishlist, toggleWishlist } = useWishlist();
+
+    const inWishlist = isInWishlist(product.id);
 
     const inCart = isInCart(product.id);
     const quantity = getItemQuantity(product.id);
@@ -32,6 +36,33 @@ const ProductCard = ({ product }) => {
                 {!isOutOfStock && isLowStock && (
                     <span className="product-badge low-stock">Low Stock</span>
                 )}
+                <button
+                    className={`wishlist-toggle ${inWishlist ? 'active' : ''}`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        toggleWishlist(product);
+                    }}
+                    style={{
+                        position: 'absolute',
+                        top: '1rem',
+                        right: '1rem',
+                        background: 'white',
+                        border: 'none',
+                        width: '35px',
+                        height: '35px',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        cursor: 'pointer',
+                        color: inWishlist ? '#ef4444' : '#94a3b8',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                        zIndex: 10,
+                        transition: 'all 0.3s ease'
+                    }}
+                >
+                    {inWishlist ? <FaHeart /> : <FaRegHeart />}
+                </button>
             </div>
 
             <div className="product-info">

@@ -152,64 +152,10 @@ const Home = () => {
                                 className="category-card"
                                 onClick={() => navigate(`/products?category=${category.id}`)}
                             >
+                                <h3 className="category-name">{category.name}</h3>
                                 <div className="category-icon" style={{ padding: 0, overflow: 'hidden' }}>
                                     <img src={category.image} alt={category.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                 </div>
-                                <h3 className="category-name">{category.name}</h3>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Featured Products Section */}
-            <section className="products-section" style={{ padding: '4rem 0' }}>
-                <div className="container">
-                    <div className="section-header">
-                        <h2>Featured Products</h2>
-                        <p>Handpicked products for you</p>
-                    </div>
-
-                    {loading ? (
-                        <div className="text-center" style={{ padding: '3rem' }}>
-                            <div className="loader-spinner" style={{ margin: '0 auto' }}></div>
-                            <p>Loading products...</p>
-                        </div>
-                    ) : featuredProducts.length > 0 ? (
-                        <>
-                            <div className="products-grid">
-                                {featuredProducts.map(product => (
-                                    <ProductCard key={product.id} product={product} />
-                                ))}
-                            </div>
-                            <div className="text-center mt-4">
-                                <Link to="/products" className="btn btn-primary">
-                                    View All Products <FaArrowRight />
-                                </Link>
-                            </div>
-                        </>
-                    ) : (
-                        <div className="text-center" style={{ padding: '3rem' }}>
-                            <p>No products available. Please seed the database first.</p>
-                        </div>
-                    )}
-                </div>
-            </section>
-
-            {/* Features Section */}
-            <section className="features-section">
-                <div className="container">
-                    <div className="section-header">
-                        <h2>Why Choose Us?</h2>
-                        <p>We make grocery shopping easy and convenient</p>
-                    </div>
-
-                    <div className="features-grid">
-                        {features.map((feature, index) => (
-                            <div key={index} className="feature-card">
-                                <div className="feature-icon">{feature.icon}</div>
-                                <h3>{feature.title}</h3>
-                                <p>{feature.description}</p>
                             </div>
                         ))}
                     </div>

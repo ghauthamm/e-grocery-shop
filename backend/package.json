@@ -1,7 +1,7 @@
 {
     "name": "egrocery-backend",
     "version": "1.0.0",
-    "description": "Backend for E-Grocery Ordering & Inventory Management System",
+    "description": "Backend for SRI RANGA SUPER MARKET",
     "main": "server.js",
     "scripts": {
         "start": "node server.js",

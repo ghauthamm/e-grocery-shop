@@ -48,15 +48,15 @@ const Footer = () => {
                     <ul className="footer-links">
                         <li>
                             <FaMapMarkerAlt style={{ marginRight: '0.5rem' }} />
-                            123 Market Street, City
+                            C57, 4th Cross Street, Thillai Nagar, Trichy
                         </li>
                         <li>
                             <FaPhone style={{ marginRight: '0.5rem' }} />
-                            +91 9876543210
+                            8056644344
                         </li>
                         <li>
                             <FaEnvelope style={{ marginRight: '0.5rem' }} />
-                            support@egrocery.com
+                            rengafoods19@gmail.com
                         </li>
                     </ul>
                 </div>
